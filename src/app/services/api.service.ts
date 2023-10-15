@@ -2,13 +2,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const BASE_URL = 'https://run.mocky.io';
-
-interface PersonDTO {
-  firstName: string;
-  lastName: string;
-  city: string;
-}
+const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
 @Injectable({
   providedIn: 'root',
@@ -16,9 +10,7 @@ interface PersonDTO {
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  getTableData(): Observable<PersonDTO[]> {
-    return this.http.get<PersonDTO[]>(
-      `${BASE_URL}/v3/30d4f36e-ee0d-4eba-8a47-e9562947c7b8`
-    );
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${BASE_URL}/users`);
   }
 }

@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
 
-interface GridElement {
-  id: string;
-  name: string;
-}
-
 @Component({
   selector: 'app-grid-view',
   templateUrl: './grid-view.component.html',
